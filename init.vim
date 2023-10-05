@@ -11,13 +11,14 @@ set autochdir
 
 call plug#begin()
 
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'neoclide/coc.nvim'
 Plug 'https://github.com/preservim/nerdtree'
 Plug 'https://github.com/tpope/vim-commentary'
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/vim-airline/vim-airline-themes'
-Plug 'https://github.com/rafi/awesome-vim-colorschemes'
+"Plug 'https://github.com/rafi/awesome-vim-colorschemes'
 Plug 'https://github.com/preservim/tagbar'
 Plug 'https://github.com/terryma/vim-multiple-cursors'
 Plug 'https://github.com/tc50cal/vim-terminal'
@@ -33,8 +34,7 @@ call plug#end()
 :colorscheme tokyonight-night
 let g:airline_theme = "tokyonight"
 
-:TSEnable highlight
-:TSEnable indent
+autocmd VimEnter * TSEnable highlight
 
 nnoremap <ESC> :noh<CR><ESC>
 nnoremap <C-f> :NERDTreeFocus<CR>
