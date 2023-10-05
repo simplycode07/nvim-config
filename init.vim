@@ -11,6 +11,7 @@ set autochdir
 
 call plug#begin()
 
+Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'neoclide/coc.nvim'
 Plug 'https://github.com/preservim/nerdtree'
 Plug 'https://github.com/tpope/vim-commentary'
@@ -32,19 +33,20 @@ call plug#end()
 :colorscheme tokyonight-night
 let g:airline_theme = "tokyonight"
 
+nnoremap <ESC> :noh<CR><ESC>
 nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <F1> :colorscheme tokyonight-night<CR>
 "inoremap <M-BS> <C-o>db
 "inoremap <M-Del> <C-o>dw
-imap <C-BS> <C-W>
 nmap <F8> :TagbarToggle<CR>
 
 inoremap jk <ESC>
 inoremap kj <ESC>
-nnoremap <TAB> :bnext<CR>
-nnoremap <S-TAB> :bprevious<CR>
+nnoremap <TAB> :tabnext<CR>
+nnoremap <S-TAB> :tabNext<CR>
+
 
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
