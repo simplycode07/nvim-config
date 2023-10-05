@@ -33,6 +33,9 @@ call plug#end()
 :colorscheme tokyonight-night
 let g:airline_theme = "tokyonight"
 
+:TSEnable highlight
+:TSEnable indent
+
 nnoremap <ESC> :noh<CR><ESC>
 nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
