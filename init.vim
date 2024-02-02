@@ -1,6 +1,6 @@
 set number
 set relativenumber
-set mouse=a
+set mouse=nv
 set autoindent
 set smartindent
 set tabstop=4
@@ -8,30 +8,33 @@ set smarttab
 set softtabstop=4
 set shiftwidth=4
 set autochdir
+set encoding=UTF-8
+set conceallevel=0
 
 call plug#begin()
 
+Plug 'tpope/vim-surround'
+Plug 'makerj/vim-pdf'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'neoclide/coc.nvim'
-Plug 'https://github.com/preservim/nerdtree'
-Plug 'https://github.com/tpope/vim-commentary'
-Plug 'https://github.com/vim-airline/vim-airline'
-Plug 'https://github.com/vim-airline/vim-airline-themes'
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-commentary'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 "Plug 'https://github.com/rafi/awesome-vim-colorschemes'
-Plug 'https://github.com/preservim/tagbar'
-Plug 'https://github.com/terryma/vim-multiple-cursors'
-Plug 'https://github.com/tc50cal/vim-terminal'
-Plug 'https://github.com//ryanoasis/vim-devicons'
-Plug 'https://github.com/folke/tokyonight.nvim'
+Plug 'preservim/tagbar'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tc50cal/vim-terminal'
+Plug 'ryanoasis/vim-devicons'
+Plug 'folke/tokyonight.nvim'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
 
-set encoding=UTF-8
 call plug#end()
 
-:colorscheme tokyonight-night
+colorscheme tokyonight-night
 let g:airline_theme = "tokyonight"
 
 autocmd VimEnter * TSEnable highlight
@@ -45,8 +48,8 @@ nnoremap <F1> :colorscheme tokyonight-night<CR>
 "inoremap <M-Del> <C-o>dw
 nmap <F8> :TagbarToggle<CR>
 
-inoremap jk <ESC>
-inoremap kj <ESC>
+"inoremap jk <ESC>
+"inoremap kj <ESC>
 nnoremap <TAB> :tabnext<CR>
 nnoremap <S-TAB> :tabNext<CR>
 
