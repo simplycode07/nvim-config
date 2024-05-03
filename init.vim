@@ -9,6 +9,7 @@ set softtabstop=4
 set shiftwidth=4
 set autochdir
 set encoding=UTF-8
+let mapleader=" "
 
 call plug#begin()
 
@@ -32,19 +33,26 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'folke/tokyonight.nvim'
 Plug 'ghifarit53/tokyonight-vim/'
 Plug 'jiangmiao/auto-pairs'
-Plug 'Yggdroot/indentLine'
+"Plug 'Yggdroot/indentLine'
 
+Plug 'eldritch-theme/eldritch.nvim'
+Plug 'nyoom-engineering/oxocarbon.nvim'
+Plug 'scottmckendry/cyberdream.nvim'
+Plug 'decaycs/decay.nvim'
+
+" minimal, kanagawa
 call plug#end()
 
-colorscheme tokyonight-night
+" colorscheme tokyonight-night
 " colorscheme catppuccin-mocha
+" colorscheme eldritch
+colorscheme oxocarbon
 
 let g:airline_theme = "tokyonight"
 " let g:airline_theme = "catpuccin"
 
 autocmd VimEnter * TSEnable highlight
 
-nnoremap <ESC> :noh<CR><ESC>
 nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
@@ -53,17 +61,21 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 "inoremap <M-Del> <C-o>dw
 nmap <F8> :TagbarToggle<CR>
 
-"inoremap jk <ESC>
-"inoremap kj <ESC>
 nnoremap <TAB> :tabnext<CR>
 nnoremap <S-TAB> :tabNext<CR>
 
+nnoremap <leader>h :noh<CR>
+xnoremap <leader>p "_dP
+
+vnoremap <leader>y "+y
 
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 let g:indentLine_char = '│'
+"let g:indentLine_conceallevel=0
+let g:vim_json_conceal=0
 
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirAllowCollapsible="-"
@@ -71,3 +83,4 @@ let g:NERDTreeDirAllowCollapsible="-"
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 
 
+set conceallevel&
