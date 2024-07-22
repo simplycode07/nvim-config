@@ -14,33 +14,31 @@ let mapleader=" "
 call plug#begin()
 
 Plug 'tpope/vim-surround'
-Plug 'makerj/vim-pdf'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'neoclide/coc.nvim'
 Plug 'preservim/nerdtree'
-Plug 'tpope/vim-commentary'
+" Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 "Plug 'https://github.com/rafi/awesome-vim-colorschemes'
 "Plug 'rmagatti/auto-session'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'Shatur/neovim-session-manager'
-Plug 'preservim/tagbar'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'tc50cal/vim-terminal'
-Plug 'ryanoasis/vim-devicons'
-Plug 'folke/tokyonight.nvim'
+"Plug 'preservim/tagbar'
+"Plug 'tc50cal/vim-terminal'
+Plug 'nvim-tree/nvim-web-devicons'
+"Plug 'folke/tokyonight.nvim'
 Plug 'ghifarit53/tokyonight-vim/'
 Plug 'jiangmiao/auto-pairs'
-"Plug 'Yggdroot/indentLine'
 
-Plug 'eldritch-theme/eldritch.nvim'
+"Plug 'eldritch-theme/eldritch.nvim'
 Plug 'nyoom-engineering/oxocarbon.nvim'
-Plug 'scottmckendry/cyberdream.nvim'
-Plug 'decaycs/decay.nvim'
+"Plug 'scottmckendry/cyberdream.nvim'
+"Plug 'decaycs/decay.nvim'
+Plug 'Everblush/nvim'
 
-" minimal, kanagawa
+Plug 'akinsho/bufferline.nvim', 
 call plug#end()
 
 " colorscheme tokyonight-night
@@ -49,6 +47,7 @@ call plug#end()
 colorscheme oxocarbon
 
 let g:airline_theme = "tokyonight"
+let g:airline#extensions#tabline#enabled = 0
 " let g:airline_theme = "catpuccin"
 
 autocmd VimEnter * TSEnable highlight
@@ -60,9 +59,9 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 "inoremap <M-BS> <C-o>db
 "inoremap <M-Del> <C-o>dw
 nmap <F8> :TagbarToggle<CR>
-
 nnoremap <TAB> :tabnext<CR>
 nnoremap <S-TAB> :tabNext<CR>
+nmap <leader>f :call CocAction("format")<CR>
 
 nnoremap <leader>h :noh<CR>
 xnoremap <leader>p "_dP
@@ -81,6 +80,3 @@ let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirAllowCollapsible="-"
 
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
-
-
-set conceallevel&
